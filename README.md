@@ -1,5 +1,7 @@
-# nodejs-docker
-Docker image for node-js, runing with the traefik service
+# NodeJS simple docker-compose testing environment
+Docker image for node-js, runing with the traefik service, mysql and phpmyadmin
+
+
 
 # Prerequisites
 You will need both **Docker**, **docker-compose** and **Nodejs with NPM**.
