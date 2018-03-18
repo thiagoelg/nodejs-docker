@@ -44,7 +44,7 @@ Save and exit.
 - Or run it in the background with:
 > ```sudo docker-compose up -d```
 
-# Stopping our server
+# Stopping your server
 
 - To simply and gently stop:
 > ```sudo docker-compose stop```
