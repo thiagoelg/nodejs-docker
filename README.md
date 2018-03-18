@@ -12,7 +12,7 @@ https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-o
 ### - Installing docker-compose
 https://www.digitalocean.com/community/tutorials/how-to-install-docker-compose-on-ubuntu-16-04
 
-### - Installing lates nodejs + npm
+### - Installing latest nodejs + npm
 https://github.com/creationix/nvm#install-script
 
 # Preparing your environment
