@@ -1,0 +1,63 @@
+version: "2"
+
+services:
+
+  node:
+    container_name: node
+    image: node:9
+    user: node
+    working_dir: /home/node/app
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./app/:/home/node/app
+    command: ./run.sh
+    labels:
+      - 'traefik.backend=node'
+      - 'traefik.port=3000'
+      - 'traefik.frontend.rule=Host:localhost.node'
+    ports:
+      - 3000
+    networks:
+      node-internal:
+        aliases:
+          - localhost.node
+
+  mariadb:
+    container_name: mariadb
+    image: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    networks:
+      node-internal:
+    
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      PMA_HOST: mariadb
+      PMA_USER: root
+      PMA_PASSWORD: root
+      PHP_UPLOAD_MAX_FILESIZE: 1G
+      PHP_MAX_INPUT_VARS: 1G
+    labels:
+      - 'traefik.backend=pma'
+      - 'traefik.port=80'
+      - 'traefik.frontend.rule=Host:localhost.phpmyadmin'
+    networks:
+      node-internal:
+
+  traefik:
+    image: traefik
+    command: -c /dev/null --web --docker --logLevel=INFO
+    ports:
+      - '80:80'
+      - '8080:8080' # Dashboard
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      node-internal:
+
+networks:
+  node-internal:
+      external:
+        name: node

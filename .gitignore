@@ -1,0 +1,5 @@
+# Ignore npm files
+app/node_modules
+
+# Ignore docker files
+.data
