@@ -4,7 +4,7 @@ Docker image for node-js, runing with the traefik service
 # Running your server
 
 - Install node dependencies:
-> ```cd app && npm install```
+> ```cd app && npm install && cd ..```
 
 - Create the docker network used by the containers:
 > ```docker network create node```
