@@ -1,6 +1,18 @@
 # nodejs-docker
 Docker image for node-js, runing with the traefik service
 
+# Prerequisites
+You will need both **Docker**, **docker-compose** and **Nodejs with NPM**.
+
+### - Installing Docker
+https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04
+
+### - Installing docker-compose
+https://www.digitalocean.com/community/tutorials/how-to-install-docker-compose-on-ubuntu-16-04
+
+### - Installing lates nodejs + npm
+https://github.com/creationix/nvm#install-script
+
 # Preparing your environment
 
 We need to edit our hosts file so our machine recognize the traefik domains we will be using.
