@@ -43,3 +43,11 @@ Save and exit.
 
 - Or run it in the background with:
 > ```sudo docker-compose up -d```
+
+# Stopping our server
+
+- To simply and gently stop:
+> ```sudo docker-compose stop```
+
+- To discard everything changed in the cointainers and reset them:
+> ```sudo docker-compose down```
